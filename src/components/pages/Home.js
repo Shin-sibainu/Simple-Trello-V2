@@ -13,28 +13,24 @@ const Home = () => {
 
   //「＋」の方のボタン
   const onClickAddTask = () => {
-    //挿入するものはオブジェクトにする必要がある。
     const newDate = {
       id: taskCards.length, //タスクの数＝番号にする
-      title: `タスク ${taskCards.length + 1}`, //ここも本来は自分で決める
+      title: `タスク ${taskCards.length + 1}`,
     };
     const newTask = [...taskCards, newDate];
     setTaskCard(newTask);
-    console.log(taskCards);
-    console.log(tasks);
   };
 
   const onSubmitAddTask = (e) => {
     e.preventDefault();
     //追加されるたびにタスクを増やす。
     const newTaskTitleDate = {
+      id: tasks.length,
       taskTitle: taskText,
     };
-    console.log(taskText);
     const newTaskTitle = [...tasks, newTaskTitleDate];
     setTask(newTaskTitle);
-    console.log("タスクが更新されました");
-    /*console.log(tasks);*/
+    setTaskText("");
   };
 
   return (
@@ -58,10 +54,12 @@ const Home = () => {
                 onChange={onChangeTaskText}
               />
             </form>
-            <div className="card">
-              <h3>{task.taskTitle}</h3>
-              <div style={{ cursor: "pointer" }}>✔</div>
-            </div>
+            {tasks.map((taskCard) => (
+              <div className="card" key={taskCard.id}>
+                <h3>{taskCard.taskTitle}</h3>
+                <div style={{ cursor: "pointer" }}>✔</div>
+              </div>
+            ))}
           </div>
         ))}
       </div>
