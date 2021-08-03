@@ -1,9 +1,15 @@
 import React from "react";
 
-const AddButton = () => {
+const AddButton = (props) => {
+  const { tasks, setTask } = props;
+
+  const onAddTask = () => {};
+
   return (
     <div className="addButton">
-      <button>button</button>
+      <button className="btn" onClick={onAddTask}>
+        ＋
+      </button>
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import AddButton from "./components/atoms/button/AddButton";
 import Header from "./components/pages/Header";
+import Home from "./components/pages/Home";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <div className="content">
-        <AddButton />
+        <Home />
       </div>
     </div>
   );

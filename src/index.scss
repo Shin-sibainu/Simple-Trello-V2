@@ -14,11 +14,27 @@ body {
     align-items: center;
     border: 1px solid #615858;
   }
+
+  input {
+  border-radius: 5px;
+  width: 200px;
+  border: 2.5px solid hsla(0, 0%, 100%, 0.8);
+  padding: 12px 7px;
+  box-shadow: 0 3px 3px rgb(168, 165, 154);
+  margin-bottom: 10px;
+  }
   
   h1 {
     font-size: 33px;
     padding: 0;
     margin: 0;
+  }
+
+  h4 {
+    font-size: 20;
+    font-weight: 900;
+    margin: 15px;
+    padding: 0;
   }
     
   a {
@@ -37,4 +53,56 @@ body {
     font-size: 24px;
   }
 
-  
+.addButton {
+  text-align: center;
+  margin: 40px;
+}
+
+  .btn {
+  color: #fff;
+  background-color: #e23e59;
+  border-radius: 50%;
+  font-size: 33px;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  border: none;
+  display: inline-block;
+  box-shadow: 2px 2px 7px 0.7px black;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 4px 4px 14px 1.2px black;
+    transform: scale(1.15) rotate(-4.5deg);
+  }
+}
+
+.taskArea {
+  display: flex;
+  justify-content: left;
+}
+
+.taskCard {
+  text-align: center;
+  border: 0.1px solid white;
+  width: 250px;
+  color: #463d3d;
+  background-color: white;
+  box-shadow: 0 3px 6px rgb(168, 165, 154);
+  margin-left: 25px;
+}
+
+.card {
+  background-color: rgb(202, 255, 222);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  width: 213px;
+  height: 55px;
+  border: 2.5px solid hsla(0, 0%, 100%, 0.8);
+  box-shadow: 0 3px 3px rgb(143, 139, 128);
+  margin-bottom: 10px;
+  border: none;
+}

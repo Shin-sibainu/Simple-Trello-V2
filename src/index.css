@@ -19,10 +19,27 @@ header {
   border: 1px solid #615858;
 }
 
+input {
+  border-radius: 5px;
+  width: 200px;
+  border: 2.5px solid rgba(255, 255, 255, 0.8);
+  padding: 12px 7px;
+  -webkit-box-shadow: 0 3px 3px #a8a59a;
+          box-shadow: 0 3px 3px #a8a59a;
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: 33px;
   padding: 0;
   margin: 0;
+}
+
+h4 {
+  font-size: 20;
+  font-weight: 900;
+  margin: 15px;
+  padding: 0;
 }
 
 a {
@@ -41,5 +58,75 @@ ul {
 li {
   margin-left: 15px;
   font-size: 24px;
+}
+
+.addButton {
+  text-align: center;
+  margin: 40px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #e23e59;
+  border-radius: 50%;
+  font-size: 33px;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  border: none;
+  display: inline-block;
+  -webkit-box-shadow: 2px 2px 7px 0.7px black;
+          box-shadow: 2px 2px 7px 0.7px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 4px 4px 14px 1.2px black;
+          box-shadow: 4px 4px 14px 1.2px black;
+  -webkit-transform: scale(1.15) rotate(-4.5deg);
+          transform: scale(1.15) rotate(-4.5deg);
+}
+
+.taskArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.taskCard {
+  text-align: center;
+  border: 0.1px solid white;
+  width: 250px;
+  color: #463d3d;
+  background-color: white;
+  -webkit-box-shadow: 0 3px 6px #a8a59a;
+          box-shadow: 0 3px 6px #a8a59a;
+  margin-left: 25px;
+}
+
+.card {
+  background-color: #caffde;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+  width: 213px;
+  height: 55px;
+  border: 2.5px solid rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 3px 3px #8f8b80;
+          box-shadow: 0 3px 3px #8f8b80;
+  margin-bottom: 10px;
+  border: none;
 }
 /*# sourceMappingURL=index.css.map */
