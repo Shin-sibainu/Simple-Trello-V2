@@ -1,22 +1,11 @@
 import React, { useState } from "react";
-import AddButton from "../atoms/button/AddButton";
-import TaskCard from "../organisms/TaskCard";
+//import AddButton from "../atoms/button/AddButton";
+//import TaskCard from "../organisms/TaskCard";
 
 const Home = () => {
-  const [tasks, setTask] = useState([
-    {
-      id: 1,
-      title: "task1",
-      taskName: "プログラミング",
-    },
-    {
-      id: 2,
-      title: "task2",
-      taskName: "読書",
-    },
-  ]);
-
   const [taskText, setTaskText] = useState("");
+  const [taskCards, setTaskCard] = useState([]);
+  const [tasks, setTask] = useState([]);
 
   const onChangeTaskText = (event) => {
     setTaskText(event.target.value);
@@ -24,14 +13,28 @@ const Home = () => {
 
   //「＋」の方のボタン
   const onClickAddTask = () => {
-    console.log("clicked");
+    //挿入するものはオブジェクトにする必要がある。
+    const newDate = {
+      id: taskCards.length, //タスクの数＝番号にする
+      title: `タスク ${taskCards.length + 1}`, //ここも本来は自分で決める
+    };
+    const newTask = [...taskCards, newDate];
+    setTaskCard(newTask);
+    console.log(taskCards);
+    console.log(tasks);
   };
 
   const onSubmitAddTask = (e) => {
     e.preventDefault();
-    //挿入するものはオブジェクトにする必要がある。
-    const newTask = [...tasks, taskText];
-    setTask(newTask);
+    //追加されるたびにタスクを増やす。
+    const newTaskTitleDate = {
+      taskTitle: taskText,
+    };
+    console.log(taskText);
+    const newTaskTitle = [...tasks, newTaskTitleDate];
+    setTask(newTaskTitle);
+    console.log("タスクが更新されました");
+    /*console.log(tasks);*/
   };
 
   return (
@@ -43,11 +46,11 @@ const Home = () => {
       </div>
 
       <div className="taskArea">
-        {tasks.map((task) => (
+        {taskCards.map((task) => (
           <div className="taskCard" key={task.id}>
             <h4>{task.title}</h4>
             <hr style={{ color: "grey" }} />
-            <form onSubmit={(e) => onSubmitAddTask(e)} className="form1">
+            <form onSubmit={(e) => onSubmitAddTask(e)}>
               <input
                 type="text"
                 placeholder="add your task"
@@ -56,7 +59,7 @@ const Home = () => {
               />
             </form>
             <div className="card">
-              <h3>{task.taskName}</h3>
+              <h3>{task.taskTitle}</h3>
               <div style={{ cursor: "pointer" }}>✔</div>
             </div>
           </div>

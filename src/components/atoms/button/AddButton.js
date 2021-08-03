@@ -1,8 +1,6 @@
-import React from "react";
+/* import React from "react";
 
-const AddButton = (props) => {
-  const { tasks, setTask } = props;
-
+const AddButton = () => {
   const onAddTask = () => {};
 
   return (
@@ -14,4 +12,4 @@ const AddButton = (props) => {
   );
 };
 
-export default AddButton;
+export default AddButton; */
