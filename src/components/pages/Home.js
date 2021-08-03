@@ -8,13 +8,14 @@ const Home = () => {
   const [tasks, setTask] = useState([]);
 
   const onChangeTaskText = (event) => {
-    setTaskText(event.target.value);
+    setTaskText(event.target.value); //どのタスクカードもこれでセットされてる。
   };
 
   //「＋」の方のボタン
   const onClickAddTask = () => {
     const newDate = {
       id: taskCards.length, //タスクの数＝番号にする
+      inputName: `input_${taskCards.length}`,
       title: `タスク ${taskCards.length + 1}`,
     };
     const newTask = [...taskCards, newDate];
@@ -47,12 +48,15 @@ const Home = () => {
             <h4>{task.title}</h4>
             <hr style={{ color: "grey" }} />
             <form onSubmit={(e) => onSubmitAddTask(e)}>
-              <input
-                type="text"
-                placeholder="add your task"
-                value={taskText}
-                onChange={onChangeTaskText}
-              />
+              <label>
+                <input
+                  name={task.inputName}
+                  type="text"
+                  placeholder="add your task"
+                  value={taskText}
+                  onChange={onChangeTaskText} //ここを変更？
+                />
+              </label>
             </form>
             {tasks.map((taskCard) => (
               <div className="card" key={taskCard.id}>
@@ -68,3 +72,5 @@ const Home = () => {
 };
 
 export default Home;
+
+/* https://simple-trello.vercel.app/ */

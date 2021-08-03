@@ -8,7 +8,7 @@ body {
 header {
   width: 100%;
   padding: 16px 40px;
-  background-color: #58a0b3;
+  background-color: #000000;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +44,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: #252222;
+  color: #fffefe;
 }
 
 ul {
